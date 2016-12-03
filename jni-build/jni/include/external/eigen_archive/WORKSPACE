@@ -1,0 +1,2 @@
+# DO NOT EDIT: automatically generated WORKSPACE file for new_http_archive rule
+workspace(name = "eigen_archive")
