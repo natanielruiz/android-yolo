@@ -12,9 +12,9 @@ GPUs are not currently supported by TensorFlow on Android. If you have a decent 
 
 Here is a [video](http://youtu.be/EhMrf4G5Wf0) showing a small demo of the app.
 
-Nataniel Ruiz
-School of Interactive Computing
-Georgia Institute of Technology
+Nataniel Ruiz  
+School of Interactive Computing  
+Georgia Institute of Technology  
 
 Credits:
 App launch icon made by [Freepik](http://www.freepik.com) from [Flaticon](http://www.flaticon.com) is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/).
