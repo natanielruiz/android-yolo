@@ -2,6 +2,7 @@
 <div align="center">
   <img src="http://i.imgur.com/hskdvoi.png"><br><br>
 </div>
+
 [Source project](https://github.com/miyosuda/TensorFlowAndroidDemo)
 
 **android-yolo** is an implementation of YOLO for TensorFlow on an Android device. It is compatible with Android Studio and usable out of the box. It can detect the 20 classes of objects in the Pascal VOC dataset: aeroplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, dining table, dog, horse, motorbike, person, potted plant, sheep, sofa, train and tv/monitor. The network only outputs one predicted bounding box at a time for now. The code can and will be extended in the future to output several predictions.
