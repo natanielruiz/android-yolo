@@ -6,23 +6,21 @@ package org.tensorflow.demo;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.View;
-import android.widget.ImageView;
 
 import org.tensorflow.demo.Classifier.Recognition;
-import org.tensorflow.demo.env.Logger;
+import org.tensorflow.demo.TensorFlowImageListener;
 
 import java.util.List;
 
 public class BoundingBoxView extends View {
     private List<Recognition> results;
-    private final Paint fgPaint;
-    private final Paint bgPaint;
+    private final Paint fgPaint, bgPaint, textPaint, trPaint;
 
     public BoundingBoxView(final Context context, final AttributeSet set) {
         super(context, set);
@@ -36,6 +34,15 @@ public class BoundingBoxView extends View {
         bgPaint.setARGB(0, 0, 0, 0);
         bgPaint.setAlpha(0);
         bgPaint.setStyle(Paint.Style.STROKE);
+
+        trPaint = new Paint();
+        trPaint.setColor(0xff00ff00);
+        trPaint.setStyle(Paint.Style.FILL);
+
+        textPaint = new Paint();
+        textPaint.setColor(Color.BLACK);
+        textPaint.setStyle(Paint.Style.STROKE);
+        textPaint.setTextSize(50);  //set text size
     }
 
     public void setResults(final List<Recognition> results) {
@@ -92,6 +99,17 @@ public class BoundingBoxView extends View {
 
                 canvas.drawRect(boundingBox, fgPaint);
                 canvas.drawRect(boundingBox, bgPaint);
+
+                // Create class name text on bounding box.
+                String class_name = recog.getTitle();
+                float text_width = textPaint.measureText(class_name)/2;
+                float text_size = textPaint.getTextSize();
+                float text_center_x = bounding_x - 2;
+                float text_center_y = bounding_y - text_size;
+                textPaint.setTextAlign(Paint.Align.CENTER);
+                canvas.drawRect(text_center_x, text_center_y, text_center_x + 2 * text_width, text_center_y + text_size, trPaint);
+                canvas.drawText(class_name, text_center_x + text_width, text_center_y + text_size, textPaint);
+
             }
         }
     }
