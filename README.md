@@ -21,3 +21,12 @@ Georgia Institute of Technology
 
 Credits:
 App launch icon made by [Freepik](http://www.freepik.com) from [Flaticon](http://www.flaticon.com) is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/).
+
+Disclaimer:
+The app is hardcoded for 20 classes and for the tiny-yolo network final output layer. You can check the following code if you want to change this:
+https://github.com/natanielruiz/android-yolo/blob/master/app/src/main/java/org/tensorflow/demo/TensorflowClassifier.java
+The code describes the interpretation of the output.
+
+The code for the network inference pass is written in C++ and the output is passed to Java. The output of the network is in the form of a String which is converted to a StringTokenizer and is then converted into an array of Floats in line 87 of TensorflowClassifier.java
+
+You can work from there and read the papers to transform the new yolo model output into something that makes sense. (I did it only for one bounding box and also obtained the confidence of this bounding box). This part of the code is commented by me so you can understand what I did. Also read the paper here: https://arxiv.org/abs/1506.02640﻿
