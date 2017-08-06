@@ -24,7 +24,9 @@ App launch icon made by [Freepik](http://www.freepik.com) from [Flaticon](http:/
 
 Disclaimer:
 The app is hardcoded for 20 classes and for the tiny-yolo network final output layer. You can check the following code if you want to change this:
+
 https://github.com/natanielruiz/android-yolo/blob/master/app/src/main/java/org/tensorflow/demo/TensorflowClassifier.java
+
 The code describes the interpretation of the output.
 
 The code for the network inference pass is written in C++ and the output is passed to Java. The output of the network is in the form of a String which is converted to a StringTokenizer and is then converted into an array of Floats in line 87 of TensorflowClassifier.java
